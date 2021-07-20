@@ -2,11 +2,22 @@ require "./playerInfo"
 require "./mathQuestions"
 require "./theGame"
 
+
+
 def newPlayers
-  print "Player 1 please sign your name"
-  player1 = Math::playerInfo.new(gets.chomp)
-  print "Player 2 please sign your name"
-  player2 = Math::playerInfo.new(gets.chomp)
+  print "Player 1 please sign your name "
+  name = gets.chomp
+  print "How many lives? "
+  lives = gets.chomp.to_i
+  player1 = Math::PlayerInfo.new(name, lives)
+
+  
+  print "Player 2 please sign your name "
+  name = gets.chomp
+  print "How many lives? "
+  lives = gets.chomp.to_i
+  player2 = Math::PlayerInfo.new(name, lives)
+
 
   return player1, player2
 end
@@ -18,8 +29,8 @@ game.begin(p1.name, p2.name)
 
 until (p1.lives == 0 || p2.lives == 0) do
   current_player = (game.nextTurn % 2 == 1) ? p1 : p2
-
-  quest = Math::mathQuestions.new
+  p current_player
+  quest = Math::MathQuestions.new
   quest.questions(game.nextTurn, current_player.name)
   playerAnswer = gets.chomp
 

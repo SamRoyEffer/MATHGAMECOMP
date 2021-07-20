@@ -1,5 +1,5 @@
 module Math
-  class mathQuestions
+  class MathQuestions
     attr_reader :quest1, :quest2, :answer
     def initialize
       @quest1 = rand(20) + 1
@@ -7,10 +7,10 @@ module Math
       @answer = @quest1 + @quest2
     end
 
-    def questions(trun, player)
+    def questions(turn, player)
       puts "\n ******QUESTION #{turn} *******\n\n"
       puts "\n#{player}'s turn\n\n"
-      print "What is #{@quest1} + #{@quest2}?"
+      print "What is #{@quest1} + #{@quest2}? "
     end
 
     def correct(rightAnswer)
