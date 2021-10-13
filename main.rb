@@ -2,8 +2,8 @@ require "./playerInfo"
 require "./mathQuestions"
 require "./theGame"
 
-
-
+/this is a change in the file/
+/this is another modification/
 def newPlayers
   print "Player 1 please sign your name "
   name = gets.chomp
